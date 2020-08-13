@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SubSubRubro extends Model
+class Producto extends Model
 {
     //
 }
