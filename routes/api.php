@@ -14,6 +14,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Empresas
+Route::apiResource("empresas","EmpresasController");
+
+//Usuarios
+Route::apiResource("usuarios","UsuariosController");
+
+//Productos
+Route::apiResource("productos","ProductosController");
+
+//Rubros
+Route::apiResource("rubros","RubrosController");
+
+//Rubros
+Route::apiResource("subrubros","SubSubRubrosController");
+
+//Rubros
+Route::apiResource("subsubrubros","SubSubRubrosController");
+
+//Marcas
+Route::apiResource("marcas","MarcasController");
+
+//Precios
+Route::apiResource("precios","PreciosController");
+
+//Etiquetas
+Route::apiResource("etiquetas","EtiquetasController");
