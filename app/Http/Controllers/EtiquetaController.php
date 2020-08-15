@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Etiqueta;
+use App\models\Etiqueta;
 use Illuminate\Http\Request;
 
 class EtiquetaController extends Controller
@@ -14,7 +14,8 @@ class EtiquetaController extends Controller
      */
     public function index()
     {
-        //
+        $etiquetas = Etiqueta::all();
+        return $etiquetas;
     }
 
     /**
@@ -35,13 +36,14 @@ class EtiquetaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $etiqueta = Etiqueta::create($request->all());
+        return $etiqueta;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Etiqueta  $etiqueta
+     * @param  \App\models\Etiqueta  $etiqueta
      * @return \Illuminate\Http\Response
      */
     public function show(Etiqueta $etiqueta)
@@ -52,7 +54,7 @@ class EtiquetaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Etiqueta  $etiqueta
+     * @param  \App\models\Etiqueta  $etiqueta
      * @return \Illuminate\Http\Response
      */
     public function edit(Etiqueta $etiqueta)
@@ -64,7 +66,7 @@ class EtiquetaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Etiqueta  $etiqueta
+     * @param  \App\models\Etiqueta  $etiqueta
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Etiqueta $etiqueta)
@@ -75,7 +77,7 @@ class EtiquetaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Etiqueta  $etiqueta
+     * @param  \App\models\Etiqueta  $etiqueta
      * @return \Illuminate\Http\Response
      */
     public function destroy(Etiqueta $etiqueta)

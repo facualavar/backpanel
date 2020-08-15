@@ -15,6 +15,10 @@ class CreateProductosTable extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 100);
+            $table->text('description');
+            $table->integer('order')->default(0);
+            $table->boolean('enabled')->default(0);
             $table->timestamps();
         });
     }

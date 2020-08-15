@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\SubRubro;
+use App\models\SubRubro;
 use Illuminate\Http\Request;
 
 class SubRubroController extends Controller
@@ -14,7 +14,8 @@ class SubRubroController extends Controller
      */
     public function index()
     {
-        //
+        $subRubros = SubRubro::all();
+        return $subRubros;
     }
 
     /**
@@ -35,13 +36,14 @@ class SubRubroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $subRubro = SubRubro::create($request->all());
+        return $subRubro;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\SubRubro  $subRubro
+     * @param  \App\models\SubRubro  $subRubro
      * @return \Illuminate\Http\Response
      */
     public function show(SubRubro $subRubro)
@@ -52,7 +54,7 @@ class SubRubroController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\SubRubro  $subRubro
+     * @param  \App\models\SubRubro  $subRubro
      * @return \Illuminate\Http\Response
      */
     public function edit(SubRubro $subRubro)
@@ -64,7 +66,7 @@ class SubRubroController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SubRubro  $subRubro
+     * @param  \App\models\SubRubro  $subRubro
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, SubRubro $subRubro)
@@ -75,7 +77,7 @@ class SubRubroController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SubRubro  $subRubro
+     * @param  \App\models\SubRubro  $subRubro
      * @return \Illuminate\Http\Response
      */
     public function destroy(SubRubro $subRubro)

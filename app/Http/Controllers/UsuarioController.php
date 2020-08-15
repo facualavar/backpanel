@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Usuario;
+use App\models\User;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -14,7 +14,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        $usuarios = User::all();
+        return $usuarios;
     }
 
     /**
@@ -35,13 +36,14 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usuario = User::create($request->all());
+        return $usuario;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Usuario  $usuario
+     * @param  \App\models\User  $usuario
      * @return \Illuminate\Http\Response
      */
     public function show(Usuario $usuario)
@@ -52,7 +54,7 @@ class UsuarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Usuario  $usuario
+     * @param  \App\models\User  $usuario
      * @return \Illuminate\Http\Response
      */
     public function edit(Usuario $usuario)
@@ -64,7 +66,7 @@ class UsuarioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Usuario  $usuario
+     * @param  \App\models\User  $usuario
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Usuario $usuario)
@@ -75,7 +77,7 @@ class UsuarioController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Usuario  $usuario
+     * @param  \App\models\User  $usuario
      * @return \Illuminate\Http\Response
      */
     public function destroy(Usuario $usuario)

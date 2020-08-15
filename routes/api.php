@@ -15,28 +15,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Empresas
-Route::apiResource("empresas","EmpresasController");
+Route::apiResource("clientes","ClienteController");
 
 //Usuarios
-Route::apiResource("usuarios","UsuariosController");
+Route::apiResource("usuarios","UsuarioController");
 
 //Productos
-Route::apiResource("productos","ProductosController");
+Route::apiResource("productos","ProductoController");
 
 //Rubros
-Route::apiResource("rubros","RubrosController");
+Route::apiResource("rubros","RubroController");
 
 //Rubros
-Route::apiResource("subrubros","SubSubRubrosController");
+Route::apiResource("subrubros","SubSubRubroController");
 
 //Rubros
-Route::apiResource("subsubrubros","SubSubRubrosController");
+Route::apiResource("subsubrubros","SubSubRubroController");
 
 //Marcas
-Route::apiResource("marcas","MarcasController");
+Route::apiResource("marcas","MarcaController");
 
 //Precios
-Route::apiResource("precios","PreciosController");
+Route::apiResource("precios","PrecioController");
 
 //Etiquetas
-Route::apiResource("etiquetas","EtiquetasController");
+Route::apiResource("etiquetas","EtiquetaController");

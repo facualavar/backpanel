@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Rubro;
+use App\models\Rubro;
 use Illuminate\Http\Request;
 
 class RubroController extends Controller
@@ -24,7 +24,8 @@ class RubroController extends Controller
      */
     public function create()
     {
-        //
+        $rubros = Rubro::all();
+        return $rubros;
     }
 
     /**
@@ -35,13 +36,14 @@ class RubroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rubro = Rubro::create($request->all());
+        return $rubro;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Rubro  $rubro
+     * @param  \App\models\Rubro  $rubro
      * @return \Illuminate\Http\Response
      */
     public function show(Rubro $rubro)
@@ -52,7 +54,7 @@ class RubroController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Rubro  $rubro
+     * @param  \App\models\Rubro  $rubro
      * @return \Illuminate\Http\Response
      */
     public function edit(Rubro $rubro)
@@ -64,7 +66,7 @@ class RubroController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Rubro  $rubro
+     * @param  \App\models\Rubro  $rubro
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Rubro $rubro)
@@ -75,7 +77,7 @@ class RubroController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Rubro  $rubro
+     * @param  \App\models\Rubro  $rubro
      * @return \Illuminate\Http\Response
      */
     public function destroy(Rubro $rubro)
