@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Sucursal;
+use App\models\Sucursal;
 use Illuminate\Http\Request;
 
 class SucursalController extends Controller
@@ -14,7 +14,8 @@ class SucursalController extends Controller
      */
     public function index()
     {
-        //
+        $sucursales = Sucursal::all();
+        return $sucursales;
     }
 
     /**
@@ -35,13 +36,14 @@ class SucursalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sucursal = Sucursal::create($request->all());
+        return $sucursal;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Sucursal  $sucursal
+     * @param  \App\models\Sucursal  $sucursal
      * @return \Illuminate\Http\Response
      */
     public function show(Sucursal $sucursal)
@@ -52,7 +54,7 @@ class SucursalController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Sucursal  $sucursal
+     * @param  \App\models\Sucursal  $sucursal
      * @return \Illuminate\Http\Response
      */
     public function edit(Sucursal $sucursal)
@@ -64,7 +66,7 @@ class SucursalController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Sucursal  $sucursal
+     * @param  \App\models\Sucursal  $sucursal
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Sucursal $sucursal)
@@ -75,7 +77,7 @@ class SucursalController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Sucursal  $sucursal
+     * @param  \App\models\Sucursal  $sucursal
      * @return \Illuminate\Http\Response
      */
     public function destroy(Sucursal $sucursal)
