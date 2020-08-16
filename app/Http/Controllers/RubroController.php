@@ -14,7 +14,8 @@ class RubroController extends Controller
      */
     public function index()
     {
-        //
+        $rubros = Rubro::all();
+        return response()->json($rubros);
     }
 
     /**
@@ -24,8 +25,7 @@ class RubroController extends Controller
      */
     public function create()
     {
-        $rubros = Rubro::all();
-        return $rubros;
+        //
     }
 
     /**
@@ -37,7 +37,7 @@ class RubroController extends Controller
     public function store(Request $request)
     {
         $rubro = Rubro::create($request->all());
-        return $rubro;
+        return response()->json($rubro);
     }
 
     /**

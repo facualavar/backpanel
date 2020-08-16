@@ -15,7 +15,7 @@ class ProductoController extends Controller
     public function index()
     {
         $productos = Producto::all();
-        return $productos;
+        return response()->json($productos);
     }
 
     /**
@@ -37,7 +37,7 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         $producto = Producto::create($request->all());
-        return $producto;
+        return response()->json($producto);
     }
 
     /**

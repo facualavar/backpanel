@@ -15,7 +15,7 @@ class ClienteController extends Controller
     public function index()
     {
         $clientes = Cliente::all();
-        return $clientes;
+        return response()->json($clientes);
     }
 
     /**
@@ -37,7 +37,7 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         $cliente = Cliente::create($request->all());
-        return $cliente;
+        return response()->json($cliente);
     }
 
     /**

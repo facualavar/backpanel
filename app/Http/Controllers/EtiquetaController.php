@@ -15,7 +15,8 @@ class EtiquetaController extends Controller
     public function index()
     {
         $etiquetas = Etiqueta::all();
-        return $etiquetas;
+        return response()->json($etiquetas);
+
     }
 
     /**
@@ -37,7 +38,7 @@ class EtiquetaController extends Controller
     public function store(Request $request)
     {
         $etiqueta = Etiqueta::create($request->all());
-        return $etiqueta;
+        return response()->json($etiqueta);
     }
 
     /**

@@ -15,7 +15,7 @@ class SucursalController extends Controller
     public function index()
     {
         $sucursales = Sucursal::all();
-        return $sucursales;
+        return response()->json($sucursales);
     }
 
     /**
@@ -37,7 +37,7 @@ class SucursalController extends Controller
     public function store(Request $request)
     {
         $sucursal = Sucursal::create($request->all());
-        return $sucursal;
+        return response()->json($sucursal);
     }
 
     /**

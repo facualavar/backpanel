@@ -15,7 +15,7 @@ class UsuarioController extends Controller
     public function index()
     {
         $usuarios = User::all();
-        return $usuarios;
+        return response()->json($usuarios);
     }
 
     /**
@@ -37,7 +37,7 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $usuario = User::create($request->all());
-        return $usuario;
+        return response()->json($usuario);
     }
 
     /**
