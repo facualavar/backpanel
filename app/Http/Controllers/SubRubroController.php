@@ -14,8 +14,12 @@ class SubRubroController extends Controller
      */
     public function index()
     {
+        $response = UtilController::arrayResponse();
+
         $subRubros = SubRubro::all();
-        return response()->json($subRubros);
+
+        $response['data'] = $subRubros;
+        return response()->json($response);
     }
 
     /**
@@ -36,7 +40,11 @@ class SubRubroController extends Controller
      */
     public function store(Request $request)
     {
+        $response = UtilController::arrayResponse();
+
         $subRubro = SubRubro::create($request->all());
+
+        $response['data'] = $subRubro;
         return response()->json($subRubro);
     }
 

@@ -14,7 +14,11 @@ class MarcaController extends Controller
      */
     public function index()
     {
+        $response = UtilController::arrayResponse();
+
         $marcas = Marca::all();
+
+        $response['data'] = $marcas;
         return response()->json($marcas);
     }
 
@@ -36,8 +40,12 @@ class MarcaController extends Controller
      */
     public function store(Request $request)
     {
+        $response = UtilController::arrayResponse();
+
         $marca = Marca::create($request->all());
-        return response()->json($marca);
+
+        $response['data'] = $marca;
+        return response()->json($response);
     }
 
     /**

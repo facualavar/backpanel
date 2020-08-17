@@ -14,8 +14,12 @@ class ProductoController extends Controller
      */
     public function index()
     {
+        $response = UtilController::arrayResponse();
+
         $productos = Producto::all();
-        return response()->json($productos);
+
+        $response['data'] = $productos;
+        return response()->json($response);
     }
 
     /**
@@ -36,8 +40,12 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
+        $response = UtilController::arrayResponse();
+
         $producto = Producto::create($request->all());
-        return response()->json($producto);
+
+        $response['data'] = $producto;
+        return response()->json($response);
     }
 
     /**

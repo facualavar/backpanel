@@ -14,7 +14,11 @@ class SucursalController extends Controller
      */
     public function index()
     {
+        $response = UtilController::arrayResponse();
+
         $sucursales = Sucursal::all();
+
+        $response['data'] = $sucursales;
         return response()->json($sucursales);
     }
 
@@ -36,7 +40,11 @@ class SucursalController extends Controller
      */
     public function store(Request $request)
     {
+        $response = UtilController::arrayResponse();
+
         $sucursal = Sucursal::create($request->all());
+
+        $response['data'] = $sucursal;
         return response()->json($sucursal);
     }
 

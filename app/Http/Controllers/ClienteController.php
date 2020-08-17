@@ -14,8 +14,12 @@ class ClienteController extends Controller
      */
     public function index()
     {
+        $response = UtilController::arrayResponse();
+
         $clientes = Cliente::all();
-        return response()->json($clientes);
+
+        $response['data'] = $clientes;
+        return response()->json($response);
     }
 
     /**
@@ -36,8 +40,12 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
+        $response = UtilController::arrayResponse();
+
         $cliente = Cliente::create($request->all());
-        return response()->json($cliente);
+
+        $response['data'] = $cliente;
+        return response()->json($response);
     }
 
     /**

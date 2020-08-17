@@ -14,7 +14,11 @@ class UsuarioController extends Controller
      */
     public function index()
     {
+        $response = UtilController::arrayResponse();
+
         $usuarios = User::all();
+
+        $response['data'] = $usuarios;
         return response()->json($usuarios);
     }
 
@@ -36,7 +40,11 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
+        $response = UtilController::arrayResponse();
+
         $usuario = User::create($request->all());
+
+        $response['data'] = $usuario;
         return response()->json($usuario);
     }
 

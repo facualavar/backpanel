@@ -14,8 +14,12 @@ class RubroController extends Controller
      */
     public function index()
     {
+        $response = UtilController::arrayResponse();
+
         $rubros = Rubro::all();
-        return response()->json($rubros);
+
+        $response['data'] = $rubros;
+        return response()->json($response);
     }
 
     /**
@@ -36,7 +40,10 @@ class RubroController extends Controller
      */
     public function store(Request $request)
     {
+        $response = UtilController::arrayResponse();
+
         $rubro = Rubro::create($request->all());
+        $response['data'] = $rubro;
         return response()->json($rubro);
     }
 

@@ -14,8 +14,12 @@ class EtiquetaController extends Controller
      */
     public function index()
     {
+        $response = UtilController::arrayResponse();
+
         $etiquetas = Etiqueta::all();
-        return response()->json($etiquetas);
+
+        $response['data'] = $etiquetas;
+        return response()->json($response);
 
     }
 
@@ -37,8 +41,12 @@ class EtiquetaController extends Controller
      */
     public function store(Request $request)
     {
+        $response = UtilController::arrayResponse();
+
         $etiqueta = Etiqueta::create($request->all());
-        return response()->json($etiqueta);
+
+        $response['data'] = $etiqueta;
+        return response()->json($response);
     }
 
     /**
