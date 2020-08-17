@@ -10,7 +10,7 @@ class UtilController extends Controller
     static function arrayResponse(){
         return [
             "status" => 0,
-            "msg" => 0,
+            "msg" => "ok",
             "data" => []
         ];
     }
