@@ -19,7 +19,7 @@ class SucursalController extends Controller
         $sucursales = Sucursal::all();
 
         $response['data'] = $sucursales;
-        return response()->json($sucursales);
+        return response()->json($response);
     }
 
     /**
@@ -45,7 +45,7 @@ class SucursalController extends Controller
         $sucursal = Sucursal::create($request->all());
 
         $response['data'] = $sucursal;
-        return response()->json($sucursal);
+        return response()->json($response);
     }
 
     /**

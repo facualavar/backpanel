@@ -19,7 +19,7 @@ class UsuarioController extends Controller
         $usuarios = User::all();
 
         $response['data'] = $usuarios;
-        return response()->json($usuarios);
+        return response()->json($response);
     }
 
     /**
@@ -45,7 +45,7 @@ class UsuarioController extends Controller
         $usuario = User::create($request->all());
 
         $response['data'] = $usuario;
-        return response()->json($usuario);
+        return response()->json($response);
     }
 
     /**

@@ -44,7 +44,7 @@ class RubroController extends Controller
 
         $rubro = Rubro::create($request->all());
         $response['data'] = $rubro;
-        return response()->json($rubro);
+        return response()->json($response);
     }
 
     /**

@@ -19,7 +19,7 @@ class MarcaController extends Controller
         $marcas = Marca::all();
 
         $response['data'] = $marcas;
-        return response()->json($marcas);
+        return response()->json($response);
     }
 
     /**

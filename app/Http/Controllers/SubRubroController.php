@@ -45,7 +45,7 @@ class SubRubroController extends Controller
         $subRubro = SubRubro::create($request->all());
 
         $response['data'] = $subRubro;
-        return response()->json($subRubro);
+        return response()->json($response);
     }
 
     /**
